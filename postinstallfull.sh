@@ -19,6 +19,7 @@ sudo apt-get remove thunderbird hexchat pidgin transmission-gtk banshee xfburn
 git clone https://github.com/Arataki-Coders/initscript.git /home/$USER/Desktop/git
 cd /home/$USER/Desktop/git
 sudo rm -rf /usr/share/xfce4/backdrops/
+sudo mkdir /usr/share/xfce4/backdrops/
 sudo cp min.jpg /usr/share/xfce4/backdrops/
 sudo cp bookmarks.html /home/$USER/Desktop/Room14/Bookmarks
 sudo xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor0/image-path --set /usr/share/xfce4/backdrops/min.jpg
