@@ -10,8 +10,8 @@ currentuser=$USER
 mkdir /home/$USER/Desktop/Coding
 mkdir /home/$USER/Desktop/Room14
 # Updates the coding workstation and installs a set of games. Also removes unneeded software.
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -y --force-yes update
+sudo apt-get -y --force-yes upgrade
 sudo apt-get install -y minetest pingus hedgewars vlc supertuxkart nexuiz 0ad preload supertux openarena torcs sauerbraten
 sudo apt-get remove thunderbird hexchat pidgin transmission-gtk banshee xfburn
 # Copies a custom configured Firefox config file and deletes old one. 
