@@ -10,7 +10,6 @@ currentuser=$USER
 mkdir /home/$USER/Desktop/Coding
 mkdir /home/$USER/Desktop/Room14
 mkdir /home/$USER/Desktop/Room14/Bookmarks
-sudo mkdir /usr/share/codingclub
 # Updates the coding workstation and installs a set of games. Also removes unneeded software.
 sudo apt-get -y --force-yes update
 sudo apt-get -y --force-yes upgrade
@@ -25,10 +24,6 @@ sudo cp min.jpg /usr/share/xfce4/backdrops/
 sudo cp bookmarks.html /home/$USER/Desktop/Room14/Bookmarks
 sudo rm -f /etc/firefox/syspref.js
 sudo cp syspref.js /etc/firefox/
-# Add a file to upstart to update system
-sudo cp codingclubupdate.conf /etc/init/
-sudo cp updatecron.sh /usr/share/codingclub/
-sudo chmod +x /usr/share/codingclub/updatecron.sh
 # Refresh current user so config changes take effect.
 sudo sed -i -e '/startup.homepage/d' /home/*/.mozilla/firefox/*/prefs.js
 rm -rf /home/$USER/Desktop/git/
