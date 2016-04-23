@@ -9,6 +9,7 @@ echo "The current user is: " $USER
 currentuser=$USER
 mkdir /home/$USER/Desktop/Coding
 mkdir /home/$USER/Desktop/Room14
+mkdir /home/$USER/Desktop/Room14/Bookmarks
 # Updates the coding workstation and installs a set of games. Also removes unneeded software.
 sudo apt-get -y --force-yes update
 sudo apt-get -y --force-yes upgrade
@@ -17,8 +18,10 @@ sudo apt-get remove thunderbird hexchat pidgin transmission-gtk banshee xfburn
 # Copies a custom configured Firefox config file and deletes old one. 
 git clone https://github.com/Arataki-Coders/initscript.git /home/$USER/Desktop/git
 cd /home/$USER/Desktop/git
-sudo cp min.jpg /usr/share/backgrounds/xfce/
-sudo xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor0/image-path --set /usr/share/backgrounds/xfce/min.jpg
+sudo rm -rf /usr/share/xfce4/backdrops/
+sudo cp min.jpg /usr/share/xfce4/backdrops/
+sudo cp bookmarks.html /home/$USER/Desktop/Room14/Bookmarks
+sudo xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor0/image-path --set /usr/share/xfce4/backdrops/min.jpg
 sudo rm -f /etc/firefox/syspref.js
 sudo cp syspref.js /etc/firefox/
 # Refresh current user so config changes take effect.
@@ -28,6 +31,5 @@ echo "--------------------------------------------"
 echo "Script complete...."
 echo "--------------------------------------------"
 echo "--------------------------------------------"
-sudo reboot
 exit 0
 
