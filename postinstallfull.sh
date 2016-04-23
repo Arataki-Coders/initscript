@@ -25,7 +25,7 @@ sudo cp bookmarks.html /home/$USER/Desktop/Room14/Bookmarks
 sudo rm -f /etc/firefox/syspref.js
 sudo cp syspref.js /etc/firefox/
 # Add a file to upstart to update system
-sudo cp myjob.conf /etc/init/
+sudo cp codingclubupdate.conf /etc/init/
 sudo cp updatecron.sh /usr/share/codingclub/
 # Refresh current user so config changes take effect.
 sudo sed -i -e '/startup.homepage/d' /home/*/.mozilla/firefox/*/prefs.js
