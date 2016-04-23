@@ -20,6 +20,7 @@ sudo apt-get remove thunderbird hexchat pidgin transmission-gtk banshee xfburn
 git clone https://github.com/Arataki-Coders/initscript.git /home/$USER/Desktop/git
 cd /home/$USER/Desktop/git
 sudo rm -rf /usr/share/xfce4/backdrops/
+sudo mkdir /usr/share/xfce4/backdrops
 sudo cp min.jpg /usr/share/xfce4/backdrops/
 sudo cp bookmarks.html /home/$USER/Desktop/Room14/Bookmarks
 sudo rm -f /etc/firefox/syspref.js
@@ -27,6 +28,7 @@ sudo cp syspref.js /etc/firefox/
 # Add a file to upstart to update system
 sudo cp codingclubupdate.conf /etc/init/
 sudo cp updatecron.sh /usr/share/codingclub/
+sudo chmod +x /usr/share/codingclub/updatecron.sh
 # Refresh current user so config changes take effect.
 sudo sed -i -e '/startup.homepage/d' /home/*/.mozilla/firefox/*/prefs.js
 rm -rf /home/$USER/Desktop/git/
