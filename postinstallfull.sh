@@ -17,6 +17,8 @@ sudo apt-get remove thunderbird hexchat pidgin transmission-gtk banshee xfburn
 # Copies a custom configured Firefox config file and deletes old one. 
 git clone https://github.com/Arataki-Coders/initscript.git /home/$USER/Desktop/git
 cd /home/$USER/Desktop/git
+mkdir /home/$USER/images
+gsettings set org.gnome.desktop.background draw-background false && gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/images/pic.jpg && gsettings set org.gnome.desktop.background draw-background true
 sudo rm -f /etc/firefox/syspref.js
 sudo cp syspref.js /etc/firefox/
 # Refresh current user so config changes take effect.
