@@ -17,8 +17,8 @@ sudo apt-get remove thunderbird hexchat pidgin transmission-gtk banshee xfburn
 # Copies a custom configured Firefox config file and deletes old one. 
 git clone https://github.com/Arataki-Coders/initscript.git /home/$USER/Desktop/git
 cd /home/$USER/Desktop/git
-mkdir /home/$USER/images
-gsettings set org.gnome.desktop.background draw-background false && gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/images/pic.jpg && gsettings set org.gnome.desktop.background draw-background true
+sudo cp min.jpg /usr/share/backgrounds/xfce/
+sudo xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor0/image-path --set /usr/share/backgrounds/xfce/min.jpg
 sudo rm -f /etc/firefox/syspref.js
 sudo cp syspref.js /etc/firefox/
 # Refresh current user so config changes take effect.
@@ -26,7 +26,8 @@ sudo sed -i -e '/startup.homepage/d' /home/*/.mozilla/firefox/*/prefs.js
 rm -rf /home/$USER/Desktop/git/
 echo "--------------------------------------------"
 echo "Script complete...."
-echo "You can now delete the postinstallfull.sh file"
 echo "--------------------------------------------"
+echo "--------------------------------------------"
+sudo reboot
 exit 0
 
